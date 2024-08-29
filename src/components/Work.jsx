@@ -77,6 +77,9 @@ const Work = () => {
       case 6:
         imagesShow([0, 1, 2, 3, 4]);
         break;
+      case 7:
+          imagesShow([0, 1, 2, 3, 4, 5]);
+          break;
     }
   });
 
