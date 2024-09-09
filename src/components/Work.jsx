@@ -95,7 +95,7 @@ const Work = () => {
           (elem, index) =>
             elem.isActive && (
               <img
-                className="absolute w-60 rounded-lg -translate-x-[50%] -translate-y-[50%]"
+                className="absolute w-60 rounded-lg -translate-x-[60%] -translate-y-[60%]"
                 src={elem.url}
                 key={index}
                 style={{ top: elem.top, left: elem.left }}

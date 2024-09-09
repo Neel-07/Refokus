@@ -5,35 +5,36 @@ const Footer = () => {
     <div className="w-full py-10">
       <div className="max-w-screen-xl mx-auto py-10 flex gap-32">
         <div className="basis-1/2">
-          <h1 className="text-[11.5rem] font-semibold leading-none tracking-tight">
+          <h1 className="text-[11.5rem] font-semibold leading-none tracking-tight hover:text-[#CBC3E3]">
             refokus.
           </h1>
         </div>
         <div className="basis-1/2 flex gap-4">
           <div className="basis-1/3">
-            <h4 className="mb-8 text-zinc-500 capitalize">socials</h4>
+            <h4 className="mb-8 text-zinc-500 capitalize hover:text-white hover:underline underline-offset-4">socials</h4>
             {["instagram", "twitter (x?)", "Linkedin"].map((item, index) => (
               <a
                 href="#"
                 key={index}
-                className="mt-2 capitalize block text-zinc-600"
+                className="mt-2 capitalize block text-zinc-600 hover:text-white"
               >
                 {item}
               </a>
             ))}
           </div>
           <div className="basis-1/3">
-            <h4 className="mb-8 text-zinc-500 capitalize">socials</h4>
-            {["instagram", "twitter (x?)", "Linkedin"].map((item, index) => (
+            <h4 className="mb-8 text-zinc-500 capitalize hover:text-white hover:underline underline-offset-4">contact</h4>
+            {["support", "email us", "call us"].map((item, index) => (
               <a
                 href="#"
                 key={index}
-                className="mt-2 capitalize block text-zinc-600"
+                className="mt-2 capitalize block text-zinc-600 hover:text-white"
               >
                 {item}
               </a>
             ))}
           </div>
+
           <div className="basis-1/2 flex flex-col items-end">
             <p className="text-right">
               Refokus is a pioneering digital agency driven by design and
@@ -47,13 +48,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-screen-xl mx-auto flex gap-5">
+      <div className="max-w-screen-xl mx-auto flex gap-5 ">
         {["Privacy Policy", "Cookie Policy", "Impressum", "Terms"].map(
           (item, index) => (
             <a
               href="#"
               key={index}
-              className="text-zinc-600 font-normal text-sm"
+              className="text-zinc-600 font-normal text-sm hover:text-white"
             >
               {item}
             </a>

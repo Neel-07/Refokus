@@ -57,6 +57,12 @@ const Marquees = () => {
   ];
   return (
     <div className="py-20 mt-32 w-full relative overflow-hidden">
+      {/* Left blur overlay */}
+      <div className="absolute top-0 left-0 h-full w-1/4 bg-gradient-to-r from-zinc-900 via-transparent to-transparent z-10 pointer-events-none"></div>
+
+      {/* Right blur overlay */}
+      <div className="absolute top-0 right-0 h-full w-1/4 bg-gradient-to-l from-zinc-900 via-transparent to-transparent z-10 pointer-events-none"></div>
+
       {images.map((item, index) => (
         <Marquee
           imagesUrls={item}

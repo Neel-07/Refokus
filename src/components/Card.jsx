@@ -33,7 +33,7 @@ const Card = ({
             <h1 className="text-8xl font-semibold tracking-tight leading-none">
               Start a Project
             </h1>
-            <button className="rounded-full mt-5 border border-zinc-50 py-2 px-5 font-semibold">
+            <button className="rounded-full mt-5 border border-zinc-50 py-2 px-5 font-semibold hover:bg-white hover:text-black">
               Contact Us
             </button>
           </>
