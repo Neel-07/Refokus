@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Product from "./Product";
 import { motion } from "framer-motion";
 
@@ -28,74 +28,65 @@ const Products = () => {
     {
       title: "Brightwave",
       description:
-        "Brightwave, a category disruptor came to a us to build their brand from scratch and make a statement on its launch.",
+        "Brightwave, a category disruptor came to us to build their brand from scratch and make a statement on its launch.",
       live: true,
       case: false,
     },
-    
   ];
 
   const [pos, setPos] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const mover = (val) => {
-    setPos(val * 18); 
+    setPos(val * 18);
   };
 
+  // Check if the screen width is larger than or equal to 720 pixels
+  const isLargeScreen = windowWidth >= 1065;
+
   return (
-    <div className="mt-32 relative">
+    <div className="mt-16 md:mt-32 relative">
       {products.map((elem, index) => (
         <Product mover={mover} count={index} val={elem} key={index} />
       ))}
-      <div className="absolute top-0  mt-14 w-full h-full pointer-events-none">
+      <div
+        className={`absolute top-0 mt-14 w-full h-full pointer-events-none ${isLargeScreen ? "" : "hidden"}`}
+      >
         <motion.div
           initial={{ y: pos, x: "-50%" }}
           animate={{ y: pos + "rem" }}
           transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.6 }}
-          className="absolute w-[25rem] h-[18rem] bg-white left-[44%] overflow-hidden rounded"
+          className="absolute w-full max-w-[25rem] h-[18rem] bg-white left-[45%] transform -translate-x-1/2 overflow-hidden rounded -z-8"
         >
-          <motion.div
-            animate={{ y: -pos + "rem" }}
-            className="w-full h-full bg-sky-200"
-            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
-          >
-            <video width="100%" height="100%"  autoPlay muted loop>
-              <source src="../videos/arqitel-43.webm" type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
-          </motion.div>
-
-          <motion.div
-            animate={{ y: -pos + "rem" }}
-            className="w-full h-full bg-sky-300"
-            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
-          >
-            <video width="100%" height="100%"  autoPlay muted loop>
-              <source src="../videos/cula-43.webm" type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
-          </motion.div>
-
-          <motion.div
-            animate={{ y: -pos + "rem" }}
-            className="w-full h-full bg-sky-400"
-            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
-          >
-            <video width="100%" height="100%"  autoPlay muted loop>
-              <source src="../videos/layoutland-43.webm" type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
-          </motion.div>
-
-          <motion.div
-            animate={{ y: -pos + "rem" }}
-            className="w-full h-full bg-sky-500"
-            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
-          >
-            <video width="100%" height="100%"  autoPlay muted loop>
-              <source src="../videos/brightwave-43.webm" type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
-          </motion.div>
+          {products.map((product, index) => (
+            <motion.div
+              key={index}
+              animate={{ y: -pos + "rem" }}
+              className={`w-full h-full bg-sky-${index + 200} relative`}
+              transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            >
+              <video
+                width="100%"
+                height="100%"
+                autoPlay
+                muted
+                loop
+                className="absolute top-0 left-0 w-full h-full object-cover"
+                src={`../videos/${product.title.toLowerCase()}-43.webm`}
+                type="video/webm"
+              >
+                Your browser does not support the video tag.
+              </video>
+             
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </div>

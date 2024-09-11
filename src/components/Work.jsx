@@ -90,7 +90,7 @@ const Work = () => {
           work
         </h1>
       </div>
-      <div className="absolute top-0 w-full h-full">
+      <div className="absolute bottom-56 w-full h-full xl:top-8">
         {images.map(
           (elem, index) =>
             elem.isActive && (

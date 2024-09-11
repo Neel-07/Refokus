@@ -4,9 +4,9 @@ import Card from "./Card";
 const Cards = () => {
   return (
     <div className="w-full">
-      <div className="max-w-screen-xl mx-auto py-20 flex gap-2">
+      <div className="max-w-screen-xl mx-auto py-20 flex flex-col md:flex-row gap-4 md:gap-2 px-4">
         <Card
-          width={"basis-1/3"}
+          width={"w-full md:basis-1/3"}
           start={false}
           para={true}
           heading="Up Next: News"
@@ -14,7 +14,7 @@ const Cards = () => {
           team="Explore what drives our team"
         />
         <Card
-          width={"basis-2/3"}
+          width={"w-full md:basis-2/3"}
           start={true}
           para={false}
           hover="true"
