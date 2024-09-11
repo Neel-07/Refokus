@@ -18,8 +18,7 @@ Welcome to the Refokus website clone project! This project aims to replicate the
 
 The Refokus Project Website Clone is a frontend development project that replicates the design and functionality of the Refokus website. This clone showcases modern web development techniques and tools, including:
 
-- **HTML** for structure
-- **CSS** for styling
+- **Tailwind CSS** for styling
 - **JavaScript** for interactivity
 - **GSAP** for animations
 - **Locomotive Scroll** for smooth scrolling
