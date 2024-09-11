@@ -79,7 +79,7 @@ const Products = () => {
                 muted
                 loop
                 className="absolute top-0 left-0 w-full h-full object-cover"
-                src={`/Refokus/videos/${product.title.toLowerCase()}-43.webm`}
+                src={`/videos/${product.title.toLowerCase()}-43.webm`}
                 type="video/webm"
               >
                 Your browser does not support the video tag.
