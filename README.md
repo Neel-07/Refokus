@@ -18,9 +18,8 @@ Welcome to the Refokus website clone project! This project aims to replicate the
 
 The Refokus Project Website Clone is a frontend development project that replicates the design and functionality of the Refokus website. This clone showcases modern web development techniques and tools, including:
 
-- **HTML** for structure
-- **CSS** for styling
-- **JavaScript** for interactivity
+- **Tailwind CSS** for styling
+- **React** for interactivity
 - **GSAP** for animations
 - **Locomotive Scroll** for smooth scrolling
 - **Shery.js** for additional effects
@@ -51,9 +50,8 @@ Check out the live demo of the Refokus Project Clone Website: [Live Demo](https:
 
 ## Tech Stack 🛠️
 
-- **HTML**: Standard markup language for building the structure of web pages.
-- **CSS**: Cascading Style Sheets for styling the website.
-- **JavaScript**: Programming language for adding interactivity and dynamic features.
+- **Tailwind CSS**: Cascading Style Sheets for styling the website.
+- **React**:  For adding interactivity and dynamic features.
 - **Locomotive Scroll**: JavaScript library for smooth scrolling effects.
 - **GSAP**: GreenSock Animation Platform for creating animations.
 - **Shery.js**: JavaScript library for creating scroll animations.
